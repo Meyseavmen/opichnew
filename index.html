@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>I'm Sorry, My Love 💔➡️❤️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --pink: #ff99cc;
+            --deep-pink: #ff66b2;
+            --light-pink: #ffe6f0;
+            --white: #fff;
+            --shadow: 0 0 15px rgba(255, 102, 178, 0.3);
+        }
+
+        * {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Quicksand', sans-serif;
+            background: linear-gradient(to bottom, var(--light-pink), #fff6fb);
+            color: #444;
+            overflow-x: hidden;
+            animation: fadeInBody 1.5s ease;
+            position: relative;
+        }
+
+        @keyframes fadeInBody {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('https://www.transparenttextures.com/patterns/hearts.png');
+            opacity: 0.08;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        header {
+            text-align: center;
+            padding: 3rem 1rem;
+            background: var(--pink);
+            color: var(--white);
+            font-family: 'Pacifico', cursive;
+            font-size: 2.2rem;
+            box-shadow: var(--shadow);
+            animation: floatHeader 2.5s ease infinite alternate;
+            position: relative;
+            z-index: 2;
+        }
+
+        @keyframes floatHeader {
+            from {
+                transform: translateY(0px);
+            }
+
+            to {
+                transform: translateY(8px);
+            }
+        }
+
+        .carousel {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            z-index: 2;
+        }
+
+        .carousel div {
+            min-width: 80%;
+            margin: 1rem;
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: var(--shadow);
+            scroll-snap-align: center;
+            font-size: 1.2rem;
+            animation: popIn 0.5s ease forwards;
+            position: relative;
+            z-index: 2;
+        }
+
+        @keyframes popIn {
+            from {
+                transform: scale(0.9);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .love-meter,
+        .flower-garden,
+        .quote-box,
+        .bottle {
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .meter {
+            height: 30px;
+            width: 90%;
+            background: #eee;
+            border-radius: 20px;
+            margin: 1rem auto;
+            position: relative;
+        }
+
+        .fill {
+            height: 100%;
+            width: 100%;
+            background: var(--deep-pink);
+            border-radius: 20px;
+            animation: fillBar 3s ease-in-out forwards;
+        }
+
+        @keyframes fillBar {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 100%;
+            }
+        }
+
+        .gallery {
+            display: flex;
+            overflow-x: auto;
+            padding: 1rem;
+            z-index: 2;
+        }
+
+        .gallery img {
+            height: 150px;
+            margin-right: 1rem;
+            border-radius: 1rem;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        .popup {
+            display: none;
+            padding: 1rem;
+            background: var(--white);
+            border-radius: 1rem;
+            box-shadow: var(--shadow);
+            margin: 1rem auto;
+            max-width: 90%;
+            z-index: 2;
+        }
+
+        button {
+            padding: 0.7rem 1.5rem;
+            font-size: 1rem;
+            background: var(--deep-pink);
+            border: none;
+            border-radius: 2rem;
+            color: var(--white);
+            cursor: pointer;
+            transition: transform 0.3s ease, background 0.3s;
+            box-shadow: 0 0 10px rgba(255, 153, 204, 0.3);
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+            background: #ff4da6;
+        }
+
+        .hug-btn {
+            display: block;
+            margin: 2rem auto;
+            font-size: 1.5rem;
+            z-index: 2;
+        }
+
+        .heart-animation {
+            text-align: center;
+            font-size: 4rem;
+            animation: floatHearts 2s ease-in-out infinite;
+            margin-top: 1rem;
+            transition: all 0.5s ease-in-out;
+        }
+
+        @keyframes floatHearts {
+            0% {
+                transform: translateY(0);
+                opacity: 0.6;
+            }
+
+            50% {
+                transform: translateY(-10px);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 0.6;
+            }
+        }
+
+        .flowers {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .flower {
+            font-size: 2rem;
+            margin: 0.5rem;
+            transition: transform 0.2s;
+            animation: bloom 0.6s ease-in-out;
+        }
+
+        @keyframes bloom {
+            from {
+                transform: scale(0.3);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .flower:hover {
+            transform: scale(1.3);
+        }
+
+        .big-flower {
+            font-size: 5rem;
+            animation: bigFlowerPop 1.2s ease-in-out;
+            margin-top: 1rem;
+        }
+
+        @keyframes bigFlowerPop {
+            0% {
+                transform: scale(0.2);
+                opacity: 0;
+            }
+
+            50% {
+                transform: scale(1.2);
+                opacity: 1;
+            }
+
+            70% {
+                transform: scale(0.9);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                font-size: 1.5rem;
+                padding: 2rem 1rem;
+            }
+
+            .carousel div {
+                font-size: 1rem;
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>💌 I'm Sorry, My Love 💌</header>
+    <section class="carousel">
+        <div>I didn’t mean to hurt you 😞</div>
+        <div>You mean everything to me 💘</div>
+        <div>I’ll do better because I love you ❤️</div>
+        <div>You're my peace and happiness 🌈</div>
+        <div>Please don’t stay mad at me 🥺</div>
+    </section>
+    <section class="love-meter">
+        <h2>Love Meter: Overflowing 💯💗</h2>
+        <div class="meter">
+            <div class="fill"></div>
+        </div>
+    </section>
+    <section class="gallery">
+        <img src="image/IMG_6317.jpg" alt="Sweet memory 1">
+        <img src="image/IMG_5503.JPG" alt="Sweet memory 2">
+        <img src="image/IMG_6431.JPG" alt="Sweet memory 3">
+        <img src="image/IMG_4368.JPG" alt="Sweet memory 4">
+        <img src="image/IMG_4333.JPG" alt="Sweet memory 5">
+    </section>
+    <section class="bottle">
+        <button onclick="document.getElementById('letter').style.display='block'">📜 Open Love Letter</button>
+        <div id="letter" class="popup">
+            <p>My beautiful sunshine,<br><br>I know I messed up, and it hurts me deeply.<br>Please know that I care for
+                you more than words can say.<br>I’m not perfect, but I want to grow with you.<br>Can you forgive me? Let
+                me hug you soon…<br><br>Forever yours,<br>❤️ Pich Sreypich</p>
+        </div>
+    </section>
+    <section class="quote-box">
+        <button onclick="showQuote()">💬 Show a Cute Apology</button>
+        <p id="quote"></p>
+    </section>
+    <button class="hug-btn" onclick="showHeart()">🤗 Hug Me</button>
+    <div id="heart-area" class="heart-animation" style="display: none;">💖💞💘</div>
+    <section class="flower-garden">
+        <h2>🌷 Please Forgive Me Garden</h2>
+        <button onclick="addFlower()">🌷 Forgive</button>
+        <div class="flowers" id="flowers"></div>
+    </section>
+    <script>
+        const quotes = [
+            "Every second without you feels like a storm without shelter…",
+            "You’re my peace, my smile, my forever.",
+            "I’ll never stop trying to make you happy.",
+            "You deserve the best version of me, and I’m working on it.",
+            "Even when you’re mad, I still love you more than anything."
+        ];
+
+        function showQuote() {
+            const i = Math.floor(Math.random() * quotes.length);
+            document.getElementById('quote').innerText = quotes[i];
+        }
+
+        function addFlower() {
+            const flowerGarden = document.getElementById('flowers');
+            const flower = document.createElement('div');
+            flower.className = 'flower';
+            flower.innerText = '🌸';
+            flowerGarden.appendChild(flower);
+            if (flowerGarden.children.length === 10) {
+                const bigFlower = document.createElement('div');
+                bigFlower.className = 'big-flower';
+                bigFlower.innerText = '💐';
+                flowerGarden.appendChild(bigFlower);
+            }
+            if (flowerGarden.children.length >= 11) {
+                flowerGarden.innerHTML += '<p>🌼 Thank you for forgiving me... I love you so much! 🌼</p>';
+            }
+        }
+
+        function showHeart() {
+            const heart = document.getElementById('heart-area');
+            heart.style.display = 'block';
+            heart.innerText = '💖💞💘';
+            setTimeout(() => { heart.style.display = 'none'; }, 2000);
+        }
+    </script>
+</body>
+
+</html>
